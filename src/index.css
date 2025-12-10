@@ -56,3 +56,436 @@ textarea:focus {
 .animate-float {
   animation: float 4s ease-in-out infinite;
 }
+
+/* home page */
+:root {
+  --primary: #71c1bf;
+  --primary-dark: #5ca5a3;
+
+  --text-main: #ffffff;
+  --text-dark: #013024;
+  --muted: #b3c3c4;
+
+  --page-max-width: 1120px;
+  --transition-fast: 0.2s ease;
+  --card-bg: #0C806C;
+  
+}
+
+/* reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background: #f5f5f5;
+  color: var(--text-dark);
+}
+
+.app {
+  min-height: 100vh;
+}
+
+
+/* NAVBAR */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+/* MAIN NAV CONTAINER */
+.navbar-inner {
+  width: 100%;
+  padding: 0.75rem 2.5rem;
+  display: flex;
+  align-items: center;
+
+  /* CREATE HUGE SPACE BETWEEN LEFT & RIGHT */
+  justify-content: space-between;
+}
+
+/* LOGO — bigger and stays left */
+.logo img {
+  height: 80px;
+  display: block;
+}
+
+/* RIGHT SIDE — links + buttons */
+.nav-right {
+  display: flex;
+  align-items: center;
+
+  /* THIS IS THE SPACE BETWEEN LOGO AND THE WHOLE RIGHT SECTION */
+  margin-left: 6rem;   /* ⬅️ increase this for more spacing */
+  gap: 3rem;           /* spacing between links group & buttons */
+}
+
+/* LINKS */
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #04423b;
+  font-weight: 500;
+}
+
+/* BUTTONS */
+.nav-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+/* ---------- BUTTONS ---------- */
+
+.btn {
+  border-radius: 999px;
+  padding: 0.5rem 1.75rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast),
+    background var(--transition-fast), color var(--transition-fast);
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #00352c;
+  box-shadow: 0 8px 20px rgba(113, 193, 191, 0.4);
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1.5px solid var(--primary);
+  color: #04423b;
+}
+
+.btn-outline:hover {
+  background: var(--primary);
+  color: #00352c;
+}
+
+.btn-hero {
+  background: var(--primary);
+  color: #00352c;
+  box-shadow: 0 10px 24px rgba(113, 193, 191, 0.5);
+}
+
+.btn-hero:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+.btn-hero-outline {
+  background: transparent;
+  border: 1.5px solid #ffffff;
+  color: #ffffff;
+}
+
+.btn-hero-outline:hover {
+  background: #ffffff;
+  color: #00352c;
+}
+
+.hero-btn {
+  min-width: 160px;
+}
+
+/* ---------- SCROLL ANIMATION ---------- */
+
+.section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.section-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- HERO (no background image file) ---------- */
+/* ---------- HERO (background image fills screen) ---------- */
+/* HERO SECTION BACKGROUND */
+.hero {
+  position: relative;
+  background-image: url("/images/hero-image.png");
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  color: #fff;
+}
+
+/* Positioning the text UNDER and LEFT to align with "WELCOME TO SANED" in the image */
+.hero-inner {
+  position: relative;
+  z-index: 2;
+
+  /* Tune these values for perfect placement */
+  padding-top: 30rem;    /* ⬅️ Moves text DOWN */
+  padding-left: 9rem;    /* ⬅️ Moves text LEFT */
+}
+
+/* TEXT BLOCK */
+.hero-left {
+  max-width: 420px;
+}
+
+/* PARAGRAPH */
+.hero-subtitle {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #d5e6e6;
+  margin-bottom: 2rem;
+}
+
+/* BUTTONS */
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+
+/* FULL WIDTH ABOUT SECTION (keep your background as you like) */
+.about {
+  margin-top: 6rem;
+  width: 100%;
+  min-height: 750px;
+  background: url("/images/backgroung.png") center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 0;
+  color: #ffffff;
+}
+
+/* Outer container */
+.about-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Title like in the design */
+.section-title {
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+}
+
+/* Text block: centered container, LEFT-aligned text */
+.about-body {
+  max-width: 780px;
+  margin: 0 auto;
+  text-align: left;
+  font-size: 1.05rem;    /* slightly bigger font */
+  line-height: 1.8;
+}
+
+/* Individual paragraphs */
+.about-body p {
+  margin: 0 0 1.1rem;
+}
+/* How It Works Section */
+.how {
+  background: #f5f5f5;
+}
+
+.how-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 4rem;
+}
+
+.how-title-color {
+  color: #0c4b41;
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+/* Grid layout */
+.how-grid {
+  margin-top: 3rem;
+
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+
+  flex-wrap: nowrap; /* keep all cards in one line */
+  overflow-x: auto;  /* scroll if screen not wide enough */
+  padding-bottom: 1rem;
+}
+
+/* Card styling */
+.how-card {
+  width: 394px;
+  height: 477px;
+
+  background: #0c806c;
+  color: #ffffff;
+
+  border-radius: 32px;
+  padding: 2.5rem 2rem;
+
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.15);
+
+  opacity: 0;
+  transform: translateY(40px);
+
+  transition: 
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out,
+    box-shadow 0.3s ease;
+}
+
+.how-card-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.how-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* Step Circle */
+.how-card-step {
+  width: 64px;
+  height: 64px;
+
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.22);
+
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.55rem; /* bigger number */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 2rem;
+}
+
+/* Title inside card */
+.how-card-title {
+  font-size: 24px;
+  font-weight: 700;
+
+  margin-bottom: 1.2rem;
+}
+
+/* Description text */
+.how-card-text {
+  font-size: 20px;
+  line-height: 1.45;
+}
+
+/* FOOTER - full image, no grey overlay */
+.footer {
+  width: 100%;
+  background: url("/images/footerr.png") center/cover no-repeat;
+  color: #ffffff;
+  padding: 3rem 0 2rem; /* space for content */
+  position: relative;
+
+  /* Remove ANY inherited background */
+  background-color: transparent !important;
+}
+
+/* Remove overlay entirely */
+.footer-overlay {
+  width: 100%;
+  height: auto; /* only height based on content */
+  background: none !important;
+  padding: 0;
+}
+
+/* Top section layout */
+.footer-top {
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem 2rem;
+  display: grid;
+  grid-template-columns: 2fr repeat(3, 1fr);
+  gap: 2.5rem;
+}
+
+/* Logo */
+.footer-logo {
+  height: 48px;
+  margin-bottom: 0.75rem;
+}
+
+/* Column headers and links */
+.footer-column h4 {
+  margin-bottom: 0.8rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.footer-column p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.footer-column a {
+  display: block;
+  font-size: 0.9rem;
+  color: #d2e6e4;
+  text-decoration: none;
+  margin-bottom: 0.4rem;
+}
+
+.footer-column a:hover {
+  color: white;
+}
+
+/* Bottom copyright line */
+.footer-bottom {
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+  padding: 1rem 1.5rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+  text-align: center;
+}
+
+.footer-copy {
+  font-size: 0.85rem;
+}
+
+/* Responsive behavior */
+@media (max-width: 900px) {
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-top {
+    grid-template-columns: 1fr;
+  }
+}
