@@ -1,3 +1,4 @@
+
 // src/components/LandingPage.jsx
 import React from "react";
 import { MapPin, DollarSign, ShieldCheck } from "lucide-react";
